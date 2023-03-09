@@ -5,4 +5,13 @@
     <string name="mujer">Mujer</string>
     <string name="hombre">Hombre</string>
     <string name="apellidos">Apellidos</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="fecha_de_nacimiento">Fecha de nacimiento</string>
+    <string-array name="grados_escolaridad">
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Universidad</item>
+        <item>Otro</item>
+    </string-array>
+
 </resources>
