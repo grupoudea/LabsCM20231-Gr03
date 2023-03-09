@@ -13,6 +13,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class PersonalDataActivity extends AppCompatActivity {
+    private static final String MY_TAG = "LAB1";
     private Date fechaSeleccionada;
 
 
@@ -33,8 +34,6 @@ public class PersonalDataActivity extends AppCompatActivity {
                 int month = calendar.get(Calendar.MONTH);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-
-                // Crear un diálogo de DatePicker
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
                         PersonalDataActivity.this,
                         new DatePickerDialog.OnDateSetListener() {
@@ -43,7 +42,7 @@ public class PersonalDataActivity extends AppCompatActivity {
                                 Calendar fechaCalendario = Calendar.getInstance();
                                 fechaCalendario.set(year, month, dayOfMonth);
                                 fechaSeleccionada = fechaCalendario.getTime();
-                                Log.i("MY_TAG", "Fecha seleccionada = "+fechaSeleccionada);
+                                Log.i(MY_TAG, "Fecha seleccionada = "+fechaSeleccionada);
 
                             }
                         },
@@ -52,7 +51,7 @@ public class PersonalDataActivity extends AppCompatActivity {
             }
         });
 
-        Log.i("MY_TAG", "Fecha seleccionada = "+fechaSeleccionada);
+        Log.i(MY_TAG, "Fecha seleccionada = "+fechaSeleccionada);
 
 
     }
