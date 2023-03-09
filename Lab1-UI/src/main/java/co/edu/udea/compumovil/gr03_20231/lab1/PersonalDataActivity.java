@@ -43,7 +43,7 @@ public class PersonalDataActivity extends AppCompatActivity {
                                 Calendar fechaCalendario = Calendar.getInstance();
                                 fechaCalendario.set(year, month, dayOfMonth);
                                 fechaSeleccionada = fechaCalendario.getTime();
-                                Log.i("MY_TAG", "Fecha seleccionada = "+fechaSeleccionada);
+                                Log.i("MY_TAG", "Fecha seleccionada datepícker = "+fechaSeleccionada);
 
                             }
                         },
