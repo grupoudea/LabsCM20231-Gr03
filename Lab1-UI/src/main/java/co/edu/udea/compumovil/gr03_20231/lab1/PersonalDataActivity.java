@@ -1,7 +1,5 @@
 package co.edu.udea.compumovil.gr03_20231.lab1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -25,20 +25,19 @@ public class PersonalDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_personal_data);
         setListeners();
         setSpinner();
+
+        this.setTitle(R.string.titulo_informacion_personal_activity);
     }
 
-    public void setSpinner(){
+    public void setSpinner() {
         Spinner spinner = (Spinner) findViewById(R.id.spinnerGradoEscolaridad);
-// Create an ArrayAdapter using the string array and a default spinner layout
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.grados_escolaridad, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-
         String elementoSeleccionado = spinner.getSelectedItem().toString();
-
     }
 
     public void setListeners() {
@@ -59,7 +58,7 @@ public class PersonalDataActivity extends AppCompatActivity {
                                 Calendar fechaCalendario = Calendar.getInstance();
                                 fechaCalendario.set(year, month, dayOfMonth);
                                 fechaSeleccionada = fechaCalendario.getTime();
-                                Log.i(MY_TAG, "Fecha seleccionada = "+fechaSeleccionada);
+                                Log.i(MY_TAG, "Fecha seleccionada = " + fechaSeleccionada);
 
                             }
                         },
@@ -68,7 +67,7 @@ public class PersonalDataActivity extends AppCompatActivity {
             }
         });
 
-        Log.i(MY_TAG, "Fecha seleccionada = "+fechaSeleccionada);
+        Log.i(MY_TAG, "Fecha seleccionada = " + fechaSeleccionada);
 
 
     }
