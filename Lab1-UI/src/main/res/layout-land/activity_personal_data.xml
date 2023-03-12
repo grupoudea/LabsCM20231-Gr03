@@ -8,54 +8,56 @@
 
     <EditText
         android:id="@+id/nombresEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="300dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/baseline_person_24"
         android:ems="10"
+        android:hint="@string/nombres"
         android:inputType="textCapWords|textNoSuggestions"
-        android:text="@string/nombres"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/nombresTextView" />
 
     <TextView
         android:id="@+id/nombresTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="196dp"
         android:layout_marginTop="16dp"
         android:text="@string/nombres"
         app:layout_constraintBottom_toTopOf="@+id/nombresEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/apellidosEditText"
-        android:layout_width="267dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="16dp"
+        android:drawableStart="@drawable/baseline_person_add_24"
         android:hint="@string/apellidos"
         android:inputType="textCapWords|textNoSuggestions"
+        app:layout_constraintBaseline_toBaselineOf="@+id/nombresEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/nombresEditText"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/nombresEditText" />
 
     <RadioGroup
         android:id="@+id/sexoRadioGroup"
         android:layout_width="198dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="96dp"
         android:orientation="horizontal"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.678"
+        app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toEndOf="@+id/sexoTextView"
-        app:layout_constraintTop_toBottomOf="@+id/apellidosEditText">
+        app:layout_constraintTop_toBottomOf="@+id/nombresEditText">
 
         <RadioButton
             android:id="@+id/masculinoRadioButton"
@@ -74,8 +76,9 @@
         android:id="@+id/sexoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/baseline_people_24"
         android:text="@string/sexo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombresEditText" />
@@ -84,31 +87,31 @@
         android:id="@+id/btnCambiar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="96dp"
         android:text="Cambiar"
+        app:layout_constraintBaseline_toBaselineOf="@+id/fechaNacimientoTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.358"
-        app:layout_constraintStart_toEndOf="@+id/fechaNacimientoTextView"
-        app:layout_constraintTop_toBottomOf="@+id/sexoRadioGroup" />
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toEndOf="@+id/fechaNacimientoTextView" />
 
     <TextView
         android:id="@+id/fechaNacimientoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="24dp"
+        android:drawableStart="@drawable/baseline_calendar_month_24"
         android:text="@string/fecha_de_nacimiento"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sexoTextView" />
 
     <Spinner
         android:id="@+id/spinnerGradoEscolaridad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="240dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/fechaNacimientoTextView" />
 
     <Button
@@ -121,7 +124,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fechaNacimientoTextView"
+        app:srcCompat="@drawable/baseline_school_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
