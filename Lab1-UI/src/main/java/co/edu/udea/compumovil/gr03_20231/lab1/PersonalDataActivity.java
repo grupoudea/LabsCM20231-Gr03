@@ -1,6 +1,7 @@
 package co.edu.udea.compumovil.gr03_20231.lab1;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,6 +22,7 @@ import co.edu.udea.compumovil.gr03_20231.lab1.dto.PersonalInformationDto;
 
 public class PersonalDataActivity extends AppCompatActivity {
     private static final String MY_TAG = "LAB1";
+
     private Date fechaSelected;
     private Button btnCambiarDatePicker;
     private Spinner spinner;
@@ -30,13 +32,20 @@ public class PersonalDataActivity extends AppCompatActivity {
     private RadioGroup sexoRadioGroup;
     private String sexoSelected;
 
+    private Date fechaSeleccionada;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_data);
 
+
         initBinding();
         initEvents();
+
+
+
     }
 
     public void initBinding() {
@@ -107,5 +116,7 @@ public class PersonalDataActivity extends AppCompatActivity {
 
     public void onClickAbrirActivityInformacionContacto(View view) {
         PersonalInformationDto personalInformationDto = buildInformacionPersonal();
+        Intent i = new Intent(PersonalDataActivity.this, ContactDataActivity.class);
+        startActivity(i);
     }
 }
