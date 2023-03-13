@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactDataActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="214dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        android:text="Información de contacto"
+        app:layout_constraintBottom_toTopOf="@+id/EditTelefono"
+        tools:layout_editor_absoluteX="34dp" />
+
+    <EditText
+        android:id="@+id/EditTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:drawableLeft="@drawable/ic_action_phone"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="Telefono*"
+        app:layout_constraintBottom_toTopOf="@+id/editEmail"
+        tools:layout_editor_absoluteX="34dp" />
+
+    <EditText
+        android:id="@+id/editDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:drawableLeft="@drawable/ic_action_direccion"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Dirección"
+        app:layout_constraintBottom_toTopOf="@+id/btnsiguientes2"
+        tools:layout_editor_absoluteX="33dp" />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:drawableLeft="@drawable/ic_action_email"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Email*"
+        app:layout_constraintBottom_toTopOf="@+id/EditPais"
+        tools:layout_editor_absoluteX="34dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/EditPais"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="36dp"
+        android:drawableLeft="@drawable/ic_action_pais"
+        android:hint="@string/Pais"
+        app:layout_constraintBottom_toTopOf="@+id/editCiudad"
+        tools:layout_editor_absoluteX="33dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/editCiudad"
+        android:layout_width="209dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="36dp"
+        android:drawableLeft="@drawable/ic_action_ciudad"
+        android:hint="@string/Ciudad"
+        app:layout_constraintBottom_toTopOf="@+id/editDireccion"
+        tools:layout_editor_absoluteX="34dp" />
+
+    <Button
+        android:id="@+id/btnsiguientes2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="220dp"
+        android:text="Siguiente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="248dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

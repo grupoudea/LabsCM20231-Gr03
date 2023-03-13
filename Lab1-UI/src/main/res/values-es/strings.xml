@@ -15,4 +15,6 @@
         <item>Universidad</item>
         <item>Otro</item>
     </string-array>
+    <string name="Pais">Pais*</string>
+    <string name="Ciudad">Ciudad*</string>
 </resources>
