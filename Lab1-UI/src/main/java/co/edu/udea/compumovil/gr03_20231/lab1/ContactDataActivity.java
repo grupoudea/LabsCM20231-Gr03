@@ -2,14 +2,27 @@ package co.edu.udea.compumovil.gr03_20231.lab1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
+
+import co.edu.udea.compumovil.gr03_20231.lab1.dto.InformacionContactoDto;
+import co.edu.udea.compumovil.gr03_20231.lab1.dto.PersonalInformationDto;
 
 public class ContactDataActivity extends AppCompatActivity {
 
     AutoCompleteTextView editpais;
     AutoCompleteTextView editciudad;
+
+    private EditText telefonoText;
+    private EditText correoTxt;
+    private EditText paisTxt;
+    private EditText CiudadTxt;
+    private EditText direccionTxt;
+
     String[] paises = {
             "Argentina","Bolivia","Brasil","Chile","Colombia","Costa Rica","Cuba","Ecuador","El Salvador","Guayana Francesa",
             "Granada","Guatemala","Guayana","Haití","Honduras","Jamaica","México","Nicaragua","Paraguay","Panamá",
@@ -39,5 +52,25 @@ public class ContactDataActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line,ciudades);
 
         editciudad.setThreshold(2);
+    }
+
+    private InformacionContactoDto buildinformacionContacto(){
+        InformacionContactoDto InformacionContactoDto = new InformacionContactoDto();
+        InformacionContactoDto.settelefono(Integer.parseInt(telefonoText.getText().toString()));
+        InformacionContactoDto.setCorreo(correoTxt.getText().toString());
+        InformacionContactoDto.setPais(paisTxt.getText().toString());
+        InformacionContactoDto.setCiudad(paisTxt.getText().toString());
+        InformacionContactoDto.setDireccion(direccionTxt.getText().toString());
+        return InformacionContactoDto;
+    }
+
+    public void onClickEnviarInformacionContacto(View view){
+        InformacionContactoDto informacionContactoDto = buildinformacionContacto();
+    }
+
+
+    public void onClickAbrirActivityPersonalData(View view) {
+        Intent i = new Intent(ContactDataActivity.this, PersonalDataActivity.class);
+        startActivity(i);
     }
 }

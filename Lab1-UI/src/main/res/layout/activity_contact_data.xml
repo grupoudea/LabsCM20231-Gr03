@@ -4,79 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="onClickAbrirActivityPersonalData"
     tools:context=".ContactDataActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="214dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="16dp"
-        android:text="Información de contacto"
-        app:layout_constraintBottom_toTopOf="@+id/EditTelefono"
-        tools:layout_editor_absoluteX="34dp" />
 
     <EditText
         android:id="@+id/EditTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
         android:drawableLeft="@drawable/ic_action_phone"
         android:ems="10"
-        android:inputType="phone"
         android:hint="Telefono*"
-        app:layout_constraintBottom_toTopOf="@+id/editEmail"
-        tools:layout_editor_absoluteX="34dp" />
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/editDireccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:drawableLeft="@drawable/ic_action_direccion"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Dirección"
-        app:layout_constraintBottom_toTopOf="@+id/btnsiguientes2"
-        tools:layout_editor_absoluteX="33dp" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="214dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="20dp"
+        android:text="Información de contacto"
+        app:layout_constraintBottom_toTopOf="@+id/EditTelefono"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.968" />
 
     <EditText
         android:id="@+id/editEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
         android:drawableLeft="@drawable/ic_action_email"
         android:ems="10"
-        android:inputType="textEmailAddress"
         android:hint="Email*"
-        app:layout_constraintBottom_toTopOf="@+id/EditPais"
-        tools:layout_editor_absoluteX="34dp" />
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditTelefono" />
 
     <AutoCompleteTextView
         android:id="@+id/EditPais"
         android:layout_width="210dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
         android:drawableLeft="@drawable/ic_action_pais"
         android:hint="@string/Pais"
-        app:layout_constraintBottom_toTopOf="@+id/editCiudad"
-        tools:layout_editor_absoluteX="33dp" />
+        android:inputType="textCapWords|textNoSuggestions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmail" />
 
     <AutoCompleteTextView
         android:id="@+id/editCiudad"
         android:layout_width="209dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
         android:drawableLeft="@drawable/ic_action_ciudad"
         android:hint="@string/Ciudad"
-        app:layout_constraintBottom_toTopOf="@+id/editDireccion"
-        tools:layout_editor_absoluteX="34dp" />
+        android:inputType="textCapWords|textNoSuggestions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditPais" />
 
     <Button
         android:id="@+id/btnsiguientes2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="220dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:onClick="onClickEnviarInformacionContacto"
         android:text="Siguiente"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="248dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toEndOf="@+id/editDireccion"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55" />
+
+    <EditText
+        android:id="@+id/editDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:drawableLeft="@drawable/ic_action_direccion"
+        android:ems="10"
+        android:hint="Dirección"
+        android:inputType="textCapWords|textNoSuggestions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editCiudad" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="162dp"
+        android:onClick="onClickAbrirActivityPersonalData"
+        android:text="Atras"
+        app:layout_constraintEnd_toStartOf="@+id/btnsiguientes2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDireccion" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
