@@ -8,11 +8,11 @@
     tools:context=".ContactDataActivity">
 
     <EditText
-        android:id="@+id/EditTelefono"
+        android:id="@+id/editTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:drawableLeft="@drawable/ic_action_phone"
         android:ems="10"
@@ -21,21 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="214dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="20dp"
-        android:text="Información de contacto"
-        app:layout_constraintBottom_toTopOf="@+id/EditTelefono"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.968" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editEmail"
@@ -51,10 +37,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditTelefono" />
+        app:layout_constraintTop_toBottomOf="@+id/editTelefono" />
 
     <AutoCompleteTextView
-        android:id="@+id/EditPais"
+        android:id="@+id/editPais"
         android:layout_width="210dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
@@ -81,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditPais" />
+        app:layout_constraintTop_toBottomOf="@+id/editPais" />
 
     <Button
         android:id="@+id/btnsiguientes2"

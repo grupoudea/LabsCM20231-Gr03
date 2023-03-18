@@ -7,10 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 
 import co.edu.udea.compumovil.gr03_20231.lab1.dto.InformacionContactoDto;
-import co.edu.udea.compumovil.gr03_20231.lab1.dto.PersonalInformationDto;
 
 public class ContactDataActivity extends AppCompatActivity {
 
@@ -22,6 +22,14 @@ public class ContactDataActivity extends AppCompatActivity {
     private EditText paisTxt;
     private EditText CiudadTxt;
     private EditText direccionTxt;
+
+    private Button btnsiguientes;
+    private Button btnVolver;
+    private EditText telefono;
+    private EditText pais;
+    private EditText ciudad;
+    private EditText direccion;
+    private EditText correo;
 
     String[] paises = {
             "Argentina","Bolivia","Brasil","Chile","Colombia","Costa Rica","Cuba","Ecuador","El Salvador","Guayana Francesa",
@@ -43,7 +51,7 @@ public class ContactDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_data);
 
-        editpais = (AutoCompleteTextView) findViewById(R.id.EditPais);
+        editpais = (AutoCompleteTextView) findViewById(R.id.editPais);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line,paises);
 
         editpais.setThreshold(2);
@@ -52,6 +60,19 @@ public class ContactDataActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line,ciudades);
 
         editciudad.setThreshold(2);
+
+        initBinding();
+    }
+
+    public void initBinding() {
+        btnsiguientes = findViewById(R.id.btnsiguientes2);
+        btnVolver = findViewById(R.id.btnVolver);
+        telefono = findViewById(R.id.editTelefono);
+        correo = findViewById(R.id.editEmail);
+        pais = findViewById(R.id.editPais);
+        ciudad = findViewById(R.id.editCiudad);
+        direccion = findViewById(R.id.editDireccion);
+        this.setTitle(R.string.titulo_contact_information_activity);
     }
 
     private InformacionContactoDto buildinformacionContacto(){

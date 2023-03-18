@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Labs20231-Gr03</string>
     <string name="titulo_informacion_personal_activity">Personal information</string>
+    <string name="titulo_contact_information_activity">contact information</string>
     <string name="nombres">Names</string>
     <string name="sexo">Sex:</string>
     <string name="mujer">Women</string>
