@@ -1,7 +1,5 @@
 package co.edu.udea.compumovil.gr03_20231.lab1.dto;
 
-import java.util.Date;
-
 public class InformacionContactoDto {
     private int telefono;
     private String correo;
@@ -9,11 +7,11 @@ public class InformacionContactoDto {
     private String ciudad;
     private String direccion;
 
-    public int gettelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void settelefono(int telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
@@ -22,7 +20,6 @@ public class InformacionContactoDto {
     }
 
     public void setCorreo(String correo) {
-
         this.correo = correo;
     }
 
@@ -31,10 +28,8 @@ public class InformacionContactoDto {
     }
 
     public void setPais(String pais) {
-
         this.pais = pais;
     }
-
 
     public String getCiudad() {
         return ciudad;

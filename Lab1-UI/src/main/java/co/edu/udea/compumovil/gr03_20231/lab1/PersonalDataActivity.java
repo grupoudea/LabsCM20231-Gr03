@@ -34,18 +34,13 @@ public class PersonalDataActivity extends AppCompatActivity {
 
     private Date fechaSeleccionada;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_data);
 
-
         initBinding();
         initEvents();
-
-
-
     }
 
     public void initBinding() {

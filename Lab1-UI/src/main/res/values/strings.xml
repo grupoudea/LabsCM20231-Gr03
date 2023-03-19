@@ -16,9 +16,6 @@
         <item>University</item>
         <item>Other</item>
     </string-array>
-
     <string name="Pais">Country*</string>
     <string name="Ciudad">City*</string>
-
-
 </resources>
