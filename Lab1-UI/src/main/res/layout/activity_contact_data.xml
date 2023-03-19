@@ -39,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTelefono" />
 
     <AutoCompleteTextView
-        android:id="@+id/editPais"
+        android:id="@+id/autoCompletePais"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
@@ -47,14 +47,13 @@
         android:layout_marginEnd="24dp"
         android:drawableLeft="@drawable/ic_action_pais"
         android:hint="@string/Pais"
-        android:inputType="textCapWords|textNoSuggestions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEmail" />
 
     <AutoCompleteTextView
-        android:id="@+id/editCiudad"
+        android:id="@+id/autoCompleteCiudad"
         android:layout_width="0dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
@@ -62,11 +61,10 @@
         android:layout_marginEnd="24dp"
         android:drawableLeft="@drawable/ic_action_ciudad"
         android:hint="@string/Ciudad"
-        android:inputType="textCapWords|textNoSuggestions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPais" />
+        app:layout_constraintTop_toBottomOf="@+id/autoCompletePais" />
 
     <Button
         android:id="@+id/btnsiguientes2"
@@ -96,6 +94,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editCiudad" />
+        app:layout_constraintTop_toBottomOf="@+id/autoCompleteCiudad" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

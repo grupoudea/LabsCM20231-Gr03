@@ -32,8 +32,6 @@ public class PersonalDataActivity extends AppCompatActivity {
     private RadioGroup sexoRadioGroup;
     private String sexoSelected;
 
-    private Date fechaSeleccionada;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
