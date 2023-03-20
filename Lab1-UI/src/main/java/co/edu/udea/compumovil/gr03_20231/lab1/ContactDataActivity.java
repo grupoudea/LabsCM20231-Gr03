@@ -18,9 +18,6 @@ public class ContactDataActivity extends AppCompatActivity {
 
     private AutoCompleteTextView autoCompletePais;
     private AutoCompleteTextView autoCompleteCiudad;
-    private EditText telefonoText;
-    private EditText correoTxt;
-    private EditText direccionTxt;
     private Button btnsiguientes;
     private Button btnVolver;
     private EditText telefono;
@@ -65,11 +62,11 @@ public class ContactDataActivity extends AppCompatActivity {
 
     private InformacionContactoDto buildinformacionContacto() {
         InformacionContactoDto InformacionContactoDto = new InformacionContactoDto();
-        InformacionContactoDto.setTelefono(telefonoText.getText().toString());
-        InformacionContactoDto.setCorreo(correoTxt.getText().toString());
+        InformacionContactoDto.setTelefono(telefono.getText().toString());
+        InformacionContactoDto.setCorreo(correo.getText().toString());
         InformacionContactoDto.setPais(autoCompletePais.getText().toString());
         InformacionContactoDto.setCiudad(autoCompleteCiudad.getText().toString());
-        InformacionContactoDto.setDireccion(direccionTxt.getText().toString());
+        InformacionContactoDto.setDireccion(direccion.getText().toString());
         return InformacionContactoDto;
     }
 
