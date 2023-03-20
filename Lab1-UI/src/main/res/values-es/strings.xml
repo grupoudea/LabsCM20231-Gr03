@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Labs20231-Gr03</string>
     <string name="titulo_informacion_personal_activity">Información personal</string>
-    <string name="titulo_informacuion_de_contacto_activity">Información de contacto</string>
     <string name="nombres">Nombres</string>
     <string name="sexo">Sexo:</string>
     <string name="mujer">Mujer</string>
@@ -17,7 +16,11 @@
         <item>Otro</item>
     </string-array>
     <string name="Pais">Pais*</string>
-    <string name="Ciudad">Ciudad*</string>
+    <string name="Ciudad">Ciudad</string>
+    <string name="Telefono">Telefono*</string>
+    <string name="email">Email*</string>
+    <string name="direccion">Direccion</string>
+
     <string-array name="paises">
         <item>Argentina</item>
         <item>Bolivia</item>
@@ -72,4 +75,7 @@
         <item>Mitú</item>
         <item>Leticia</item>
     </string-array>
+
+    <string name="titulo_contact_information_activity">Informacion de contacto</string>
+
 </resources>
