@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +17,7 @@ import com.google.android.material.radiobutton.MaterialRadioButton;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 import co.edu.udea.compumovil.gr03_20231.lab1.dto.PersonalInformationDto;
 
@@ -107,5 +109,26 @@ public class PersonalDataActivity extends AppCompatActivity {
 
     public void onClickAbrirActivityInformacionContacto(View view) {
         PersonalInformationDto personalInformationDto = buildInformacionPersonal();
+        Boolean valid=validated(personalInformationDto);
+        if(valid){
+
+        }
+    }
+    public Boolean validated(PersonalInformationDto personalInformationDto){
+        Boolean valid=true;
+        if(Objects.isNull(personalInformationDto.getNombres())){
+            Toast.makeText(this, "El campo Nombres no puede quedar vacio", Toast.LENGTH_LONG).show();
+            valid=false;
+        }
+        if(Objects.isNull(personalInformationDto.getApellidos())){
+            Toast.makeText(this, "El campo Apellidos no puede quedar vacio", Toast.LENGTH_LONG).show();
+            valid=false;
+        }
+        if(Objects.isNull(personalInformationDto.getFechaNacimiento())){
+            Toast.makeText(this, "El campo Fecha de Nacimiento no puede quedar vacio", Toast.LENGTH_LONG).show();
+            valid=false;
+        }
+
+        return valid;
     }
 }
