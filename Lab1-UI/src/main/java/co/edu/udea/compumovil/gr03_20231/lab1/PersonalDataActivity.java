@@ -1,6 +1,7 @@
 package co.edu.udea.compumovil.gr03_20231.lab1;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,6 +24,7 @@ import co.edu.udea.compumovil.gr03_20231.lab1.dto.PersonalInformationDto;
 
 public class PersonalDataActivity extends AppCompatActivity {
     private static final String MY_TAG = "LAB1";
+
     private Date fechaSelected;
     private Button btnCambiarDatePicker;
     private Spinner spinner;
@@ -111,7 +113,8 @@ public class PersonalDataActivity extends AppCompatActivity {
         PersonalInformationDto personalInformationDto = buildInformacionPersonal();
         Boolean valid=validated(personalInformationDto);
         if(valid){
-
+            Intent i = new Intent(PersonalDataActivity.this, ContactDataActivity.class);
+            startActivity(i);
         }
     }
     public Boolean validated(PersonalInformationDto personalInformationDto){
@@ -130,5 +133,6 @@ public class PersonalDataActivity extends AppCompatActivity {
         }
 
         return valid;
+
     }
 }
