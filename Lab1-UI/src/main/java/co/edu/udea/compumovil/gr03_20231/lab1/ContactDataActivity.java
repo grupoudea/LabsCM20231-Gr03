@@ -65,7 +65,7 @@ public class ContactDataActivity extends AppCompatActivity {
 
     private InformacionContactoDto buildinformacionContacto() {
         InformacionContactoDto InformacionContactoDto = new InformacionContactoDto();
-        InformacionContactoDto.setTelefono(Integer.parseInt(telefonoText.getText().toString()));
+        InformacionContactoDto.setTelefono(telefonoText.getText().toString());
         InformacionContactoDto.setCorreo(correoTxt.getText().toString());
         InformacionContactoDto.setPais(autoCompletePais.getText().toString());
         InformacionContactoDto.setCiudad(autoCompleteCiudad.getText().toString());

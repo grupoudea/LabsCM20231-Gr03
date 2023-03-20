@@ -1,17 +1,17 @@
 package co.edu.udea.compumovil.gr03_20231.lab1.dto;
 
 public class InformacionContactoDto {
-    private int telefono;
+    private String telefono;
     private String correo;
     private String pais;
     private String ciudad;
     private String direccion;
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
