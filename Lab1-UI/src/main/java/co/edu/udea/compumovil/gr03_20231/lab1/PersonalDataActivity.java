@@ -3,6 +3,7 @@ package co.edu.udea.compumovil.gr03_20231.lab1;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.radiobutton.MaterialRadioButton;
+import com.google.gson.Gson;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -113,21 +115,27 @@ public class PersonalDataActivity extends AppCompatActivity {
         PersonalInformationDto personalInformationDto = buildInformacionPersonal();
         Boolean valid=validated(personalInformationDto);
         if(valid){
+            Log.i("Informacion Personal", "Informacion Personal" );
+            Log.i("Informacion Personal-Nombres", personalInformationDto.getNombres() );
+            Log.i("Informacion Personal-Apellidos", personalInformationDto.getApellidos() );
+            Log.i("Informacion Personal-Sexo", personalInformationDto.getSexo() );
+            Log.i("Informacion Personal-Fecha Nacimiento", personalInformationDto.getFechaNacimiento().toString() );
+            Log.i("Informacion Personal-Grado Escolaridad", personalInformationDto.getGradoEscolaridad());
             Intent i = new Intent(PersonalDataActivity.this, ContactDataActivity.class);
             startActivity(i);
         }
     }
     public Boolean validated(PersonalInformationDto personalInformationDto){
         Boolean valid=true;
-        if(Objects.isNull(personalInformationDto.getNombres())){
+        if(Objects.isNull(personalInformationDto.getNombres()) || personalInformationDto.getNombres().isEmpty()){
             Toast.makeText(this, "El campo Nombres no puede quedar vacio", Toast.LENGTH_LONG).show();
             valid=false;
         }
-        if(Objects.isNull(personalInformationDto.getApellidos())){
+        if(Objects.isNull(personalInformationDto.getApellidos()) || personalInformationDto.getApellidos().isEmpty()){
             Toast.makeText(this, "El campo Apellidos no puede quedar vacio", Toast.LENGTH_LONG).show();
             valid=false;
         }
-        if(Objects.isNull(personalInformationDto.getFechaNacimiento())){
+        if(Objects.isNull(personalInformationDto.getFechaNacimiento()) || personalInformationDto.getFechaNacimiento().toString().isEmpty()){
             Toast.makeText(this, "El campo Fecha de Nacimiento no puede quedar vacio", Toast.LENGTH_LONG).show();
             valid=false;
         }

@@ -1,18 +1,23 @@
 package co.edu.udea.compumovil.gr03_20231.lab1;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import co.edu.udea.compumovil.gr03_20231.lab1.dto.InformacionContactoDto;
+import co.edu.udea.compumovil.gr03_20231.lab1.dto.PersonalInformationDto;
 
 public class ContactDataActivity extends AppCompatActivity {
 
@@ -72,11 +77,39 @@ public class ContactDataActivity extends AppCompatActivity {
 
     public void onClickEnviarInformacionContacto(View view) {
         InformacionContactoDto informacionContactoDto = buildinformacionContacto();
+        Boolean valid=validated(informacionContactoDto);
+        if(valid){
+            Log.i("Informacion Personal", "Informacion de Contacto" );
+            Log.i("Informacion Personal-Telefono", informacionContactoDto.getTelefono() );
+            Log.i("Informacion Personal-Dirección", informacionContactoDto.getDireccion() );
+            Log.i("Informacion Personal-Correo", informacionContactoDto.getCorreo());
+            Log.i("Informacion Personal-Pais", informacionContactoDto.getPais() );
+            Log.i("Informacion Personal-Ciudad", informacionContactoDto.getCiudad());
+
+        }
     }
 
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return false;
+    }
+    public Boolean validated(InformacionContactoDto informacionContactoDto){
+        Boolean valid=true;
+        if(Objects.isNull(informacionContactoDto.getTelefono()) || informacionContactoDto.getTelefono().isEmpty()){
+            Toast.makeText(this, "El campo Telefono no puede quedar vacio", Toast.LENGTH_LONG).show();
+            valid=false;
+        }
+        if(Objects.isNull(informacionContactoDto.getCorreo()) || informacionContactoDto.getCorreo().isEmpty()){
+            Toast.makeText(this, "El campo Correo no puede quedar vacio", Toast.LENGTH_LONG).show();
+            valid=false;
+        }
+        if(Objects.isNull(informacionContactoDto.getPais()) || informacionContactoDto.getPais().isEmpty()){
+            Toast.makeText(this, "El campo Pais no puede quedar vacio", Toast.LENGTH_LONG).show();
+            valid=false;
+        }
+
+        return valid;
+
     }
 }
