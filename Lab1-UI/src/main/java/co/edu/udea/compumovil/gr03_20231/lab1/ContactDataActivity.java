@@ -1,6 +1,5 @@
 package co.edu.udea.compumovil.gr03_20231.lab1;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +16,6 @@ import java.util.List;
 import java.util.Objects;
 
 import co.edu.udea.compumovil.gr03_20231.lab1.dto.InformacionContactoDto;
-import co.edu.udea.compumovil.gr03_20231.lab1.dto.PersonalInformationDto;
 
 public class ContactDataActivity extends AppCompatActivity {
 
@@ -77,15 +75,14 @@ public class ContactDataActivity extends AppCompatActivity {
 
     public void onClickEnviarInformacionContacto(View view) {
         InformacionContactoDto informacionContactoDto = buildinformacionContacto();
-        Boolean valid=validated(informacionContactoDto);
-        if(valid){
-            Log.i("Informacion Personal", "Informacion de Contacto" );
-            Log.i("Informacion Personal", "Telefono:"+informacionContactoDto.getTelefono() );
-            Log.i("Informacion Personal", "Dirección:"+informacionContactoDto.getDireccion() );
-            Log.i("Informacion Personal", "Email:"+informacionContactoDto.getCorreo());
-            Log.i("Informacion Personal", "País:"+informacionContactoDto.getPais() );
-            Log.i("Informacion Personal","Ciudad:"+ informacionContactoDto.getCiudad());
-
+        Boolean valid = validated(informacionContactoDto);
+        if (valid) {
+            Log.i("Informacion Personal", "Informacion de Contacto");
+            Log.i("Informacion Personal", "Telefono:" + informacionContactoDto.getTelefono());
+            Log.i("Informacion Personal", "Dirección:" + informacionContactoDto.getDireccion());
+            Log.i("Informacion Personal", "Email:" + informacionContactoDto.getCorreo());
+            Log.i("Informacion Personal", "País:" + informacionContactoDto.getPais());
+            Log.i("Informacion Personal", "Ciudad:" + informacionContactoDto.getCiudad());
         }
     }
 
@@ -94,22 +91,21 @@ public class ContactDataActivity extends AppCompatActivity {
         onBackPressed();
         return false;
     }
-    public Boolean validated(InformacionContactoDto informacionContactoDto){
-        Boolean valid=true;
-        if(Objects.isNull(informacionContactoDto.getTelefono()) || informacionContactoDto.getTelefono().isEmpty()){
+
+    public Boolean validated(InformacionContactoDto informacionContactoDto) {
+        Boolean valid = true;
+        if (Objects.isNull(informacionContactoDto.getTelefono()) || informacionContactoDto.getTelefono().isEmpty()) {
             Toast.makeText(this, "El campo Telefono no puede quedar vacio", Toast.LENGTH_LONG).show();
-            valid=false;
+            valid = false;
         }
-        if(Objects.isNull(informacionContactoDto.getCorreo()) || informacionContactoDto.getCorreo().isEmpty()){
+        if (Objects.isNull(informacionContactoDto.getCorreo()) || informacionContactoDto.getCorreo().isEmpty()) {
             Toast.makeText(this, "El campo Correo no puede quedar vacio", Toast.LENGTH_LONG).show();
-            valid=false;
+            valid = false;
         }
-        if(Objects.isNull(informacionContactoDto.getPais()) || informacionContactoDto.getPais().isEmpty()){
+        if (Objects.isNull(informacionContactoDto.getPais()) || informacionContactoDto.getPais().isEmpty()) {
             Toast.makeText(this, "El campo Pais no puede quedar vacio", Toast.LENGTH_LONG).show();
-            valid=false;
+            valid = false;
         }
-
         return valid;
-
     }
 }

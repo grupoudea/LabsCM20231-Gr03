@@ -2,7 +2,6 @@ package co.edu.udea.compumovil.gr03_20231.lab1;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +16,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.radiobutton.MaterialRadioButton;
-
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -114,49 +112,51 @@ public class PersonalDataActivity extends AppCompatActivity {
         return personalInformationDto;
     }
 
-
-
-
-
     public void onClickAbrirActivityInformacionContacto(View view) {
         PersonalInformationDto personalInformationDto = buildInformacionPersonal();
-        Boolean valid=validated(personalInformationDto);
+        Boolean valid = validated(personalInformationDto);
         formatoCampos(personalInformationDto);
-        if(valid){
-            Log.i("Informacion Personal", "Informacion Personal" );
-            Log.i("Informacion Personal", "Nombres:"+personalInformationDto.getNombres() );
-            Log.i("Informacion Personal", "Apellidos:"+personalInformationDto.getApellidos() );
-            Log.i("Informacion Personal", "Sexo:"+personalInformationDto.getSexo() );
-            Log.i("Informacion Personal", "Fecha de Nacimiento:"+personalInformationDto.getFechaNacimiento().toString() );
-            Log.i("Informacion Personal","Grado Escolaridad:"+ personalInformationDto.getGradoEscolaridad());
+        if (valid) {
+            Log.i("Informacion Personal", "Informacion Personal");
+            Log.i("Informacion Personal", "Nombres:" + personalInformationDto.getNombres());
+            Log.i("Informacion Personal", "Apellidos:" + personalInformationDto.getApellidos());
+            Log.i("Informacion Personal", "Sexo:" + personalInformationDto.getSexo());
+            Log.i("Informacion Personal", "Fecha de Nacimiento:" + convertToLocalDateViaInstant(personalInformationDto.getFechaNacimiento()).toString());
+            Log.i("Informacion Personal", "Grado Escolaridad:" + personalInformationDto.getGradoEscolaridad());
             Intent i = new Intent(PersonalDataActivity.this, ContactDataActivity.class);
             startActivity(i);
         }
     }
-    public Boolean validated(PersonalInformationDto personalInformationDto){
-        Boolean valid=true;
-        if(Objects.isNull(personalInformationDto.getNombres()) || personalInformationDto.getNombres().isEmpty()){
+
+    public Boolean validated(PersonalInformationDto personalInformationDto) {
+        Boolean valid = true;
+        if (Objects.isNull(personalInformationDto.getNombres()) || personalInformationDto.getNombres().isEmpty()) {
             Toast.makeText(this, "El campo Nombres no puede quedar vacio", Toast.LENGTH_LONG).show();
-            valid=false;
+            valid = false;
         }
-        if(Objects.isNull(personalInformationDto.getApellidos()) || personalInformationDto.getApellidos().isEmpty()){
+        if (Objects.isNull(personalInformationDto.getApellidos()) || personalInformationDto.getApellidos().isEmpty()) {
             Toast.makeText(this, "El campo Apellidos no puede quedar vacio", Toast.LENGTH_LONG).show();
-            valid=false;
+            valid = false;
         }
-        if(Objects.isNull(personalInformationDto.getFechaNacimiento()) || personalInformationDto.getFechaNacimiento().toString().isEmpty()){
+        if (Objects.isNull(personalInformationDto.getFechaNacimiento()) || personalInformationDto.getFechaNacimiento().toString().isEmpty()) {
             Toast.makeText(this, "El campo Fecha de Nacimiento no puede quedar vacio", Toast.LENGTH_LONG).show();
-            valid=false;
+            valid = false;
         }
-
         return valid;
-
     }
-    public void formatoCampos(PersonalInformationDto personalInformationDto){
-        if(personalInformationDto.getGradoEscolaridad().equals("Grado de escolaridad")){
+
+    public void formatoCampos(PersonalInformationDto personalInformationDto) {
+        if (personalInformationDto.getGradoEscolaridad().equals("Grado de escolaridad")) {
             personalInformationDto.setGradoEscolaridad("");
         }
-        if(Objects.isNull(personalInformationDto.getSexo())){
+        if (Objects.isNull(personalInformationDto.getSexo())) {
             personalInformationDto.setSexo("");
         }
+    }
+
+    public LocalDate convertToLocalDateViaInstant(Date dateToConvert) {
+        return dateToConvert.toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate();
     }
 }
