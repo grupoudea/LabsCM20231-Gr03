@@ -80,11 +80,11 @@ public class ContactDataActivity extends AppCompatActivity {
         Boolean valid=validated(informacionContactoDto);
         if(valid){
             Log.i("Informacion Personal", "Informacion de Contacto" );
-            Log.i("Informacion Personal-Telefono", informacionContactoDto.getTelefono() );
-            Log.i("Informacion Personal-Dirección", informacionContactoDto.getDireccion() );
-            Log.i("Informacion Personal-Correo", informacionContactoDto.getCorreo());
-            Log.i("Informacion Personal-Pais", informacionContactoDto.getPais() );
-            Log.i("Informacion Personal-Ciudad", informacionContactoDto.getCiudad());
+            Log.i("Informacion Personal", "Telefono:"+informacionContactoDto.getTelefono() );
+            Log.i("Informacion Personal", "Dirección:"+informacionContactoDto.getDireccion() );
+            Log.i("Informacion Personal", "Email:"+informacionContactoDto.getCorreo());
+            Log.i("Informacion Personal", "País:"+informacionContactoDto.getPais() );
+            Log.i("Informacion Personal","Ciudad:"+ informacionContactoDto.getCiudad());
 
         }
     }

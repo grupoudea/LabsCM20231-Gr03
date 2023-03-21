@@ -2,6 +2,7 @@ package co.edu.udea.compumovil.gr03_20231.lab1;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,8 +17,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.radiobutton.MaterialRadioButton;
-import com.google.gson.Gson;
 
+
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
@@ -111,16 +114,21 @@ public class PersonalDataActivity extends AppCompatActivity {
         return personalInformationDto;
     }
 
+
+
+
+
     public void onClickAbrirActivityInformacionContacto(View view) {
         PersonalInformationDto personalInformationDto = buildInformacionPersonal();
         Boolean valid=validated(personalInformationDto);
+        formatoCampos(personalInformationDto);
         if(valid){
             Log.i("Informacion Personal", "Informacion Personal" );
-            Log.i("Informacion Personal-Nombres", personalInformationDto.getNombres() );
-            Log.i("Informacion Personal-Apellidos", personalInformationDto.getApellidos() );
-            Log.i("Informacion Personal-Sexo", personalInformationDto.getSexo() );
-            Log.i("Informacion Personal-Fecha Nacimiento", personalInformationDto.getFechaNacimiento().toString() );
-            Log.i("Informacion Personal-Grado Escolaridad", personalInformationDto.getGradoEscolaridad());
+            Log.i("Informacion Personal", "Nombres:"+personalInformationDto.getNombres() );
+            Log.i("Informacion Personal", "Apellidos:"+personalInformationDto.getApellidos() );
+            Log.i("Informacion Personal", "Sexo:"+personalInformationDto.getSexo() );
+            Log.i("Informacion Personal", "Fecha de Nacimiento:"+personalInformationDto.getFechaNacimiento().toString() );
+            Log.i("Informacion Personal","Grado Escolaridad:"+ personalInformationDto.getGradoEscolaridad());
             Intent i = new Intent(PersonalDataActivity.this, ContactDataActivity.class);
             startActivity(i);
         }
@@ -142,5 +150,13 @@ public class PersonalDataActivity extends AppCompatActivity {
 
         return valid;
 
+    }
+    public void formatoCampos(PersonalInformationDto personalInformationDto){
+        if(personalInformationDto.getGradoEscolaridad().equals("Grado de escolaridad")){
+            personalInformationDto.setGradoEscolaridad("");
+        }
+        if(Objects.isNull(personalInformationDto.getSexo())){
+            personalInformationDto.setSexo("");
+        }
     }
 }
